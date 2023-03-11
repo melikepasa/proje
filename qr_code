@@ -1,0 +1,11 @@
+import qrcode
+qr= qrcode.QRCode(version = 1,
+                  error_correction= qrcode.constants.ERROR_CORRECT_L,
+                  box_size = 20,
+                  border = 5 )
+x = " Merhaba "
+qr.add_data(x)
+qr.make(fit=True)
+
+karekod = qr.make_image(fill_color = "black", back_color = "white")
+karekod.save("qr_code.png")
